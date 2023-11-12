@@ -50,7 +50,7 @@ unsigned int convert_s(va_list args, buffer_t *output,
 		str++;
 	}
 
-	rend += print_neg_width(output, ret, flags, width);
+	rend += print_neg_width(output, rend, flags, width);
 
 	return (rend);
 }

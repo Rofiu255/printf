@@ -61,9 +61,9 @@ unsigned int convert_percent(va_list args, buffer_t *output,
 	(void)prec;
 	(void)len;
 
-	rend += print_width(output, ret, flags, width);
+	rend += print_width(output, rend, flags, width);
 	rend += _memcpy(output, &percent, 1);
-	rend += print_neg_width(output, ret, flags, width);
+	rend += print_neg_width(output, rend, flags, width);
 
 	return (rend);
 }
@@ -85,11 +85,11 @@ unsigned int convert_p(va_list args, buffer_t *output,
 {
 	char *null = "(nil)";
 	unsigned long int addr;
-	unsigned int ret = 0;
+	unsigned int rend = 0;
 
 	(void)len;
 
-	address = va_arg(args, unsigned long int);
+	addr = va_arg(args, unsigned long int);
 	if (addr == '\0')
 		return (_memcpy(output, null, 5));
 

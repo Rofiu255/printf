@@ -40,7 +40,7 @@ unsigned int convert_x(va_list args, buffer_t *output,
 		rend += convert_ubase(output, num, "0123456789abcdef",
 				flags, width, prec);
 
-	rend += print_neg_width(output, ret, flags, width);
+	rend += print_neg_width(output, rend, flags, width);
 
 	return (rend);
 }

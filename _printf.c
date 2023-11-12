@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 void clean_up(va_list args, buffer_t *output);
 int printf_run(const char *format, va_list args, buffer_t *output);
@@ -84,7 +86,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	ret = printf_run(format, args, output);
+	rend = printf_run(format, args, output);
 
 	return (rend);
 }
